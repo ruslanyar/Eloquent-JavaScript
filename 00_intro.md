@@ -4,75 +4,75 @@
 
 {{quote {author: "Ellen Ullman", title: "Close to the Machine: Technophilia and Its Discontents", chapter: true}
 
-We think we are creating the system for our own purposes. We believe we are making it in our own image... But the computer is not really like us. It is a projection of a very slim part of ourselves: that portion devoted to logic, order, rule, and clarity.
+Мы думаем, что создаем систему для своих собственных целей. Мы верим, что создаем ее по своему образу и подобию... Но компьютер на самом деле не похож на нас. Он является проекцией очень тонкой части нас самих: той части, которая посвящена логике, порядку, правилам и ясности.
 
 quote}}
 
 {{figure {url: "img/chapter_picture_00.jpg", alt: "Illustration of a screwdriver next to a circuit board of about the same size", chapter: "framed"}}}
 
-This is a book about instructing ((computer))s. Computers are about as common as screwdrivers today, but they are quite a bit more complex, and making them do what you want them to do isn't always easy.
+Эта книга о том, как давать инструкции ((компьютер))ам. Сегодня компьютеры стали такими же привычными, как отвертки, но они гораздо сложнее, и заставить их делать то, что вам нужно, не всегда просто.
 
-If the task you have for your computer is a common, well-understood one, such as showing you your email or acting like a calculator, you can open the appropriate ((application)) and get to work. But for unique or open-ended tasks, there often is no appropriate application.
+Если задача, которую вы хотите выполнить на компьютере, является распространенной и хорошо изученной, например, проверка электронной почты или использование калькулятора, вы можете открыть соответствующее ((приложение)) и приступить к делу. Но для уникальных или открытых задач часто не находится подходящего приложения.
 
-That is where ((programming)) may come in. _Programming_ is the act of constructing a _program_—a set of precise instructions telling a computer what to do. Because computers are dumb, pedantic beasts, programming is fundamentally tedious and frustrating.
+Именно здесь на помощь может прийти ((программирование)). _Программирование_ - это процесс создание _программы_ - набора точных инструкций, указывающих компьютеру, что делать. Поскольку компьютеры — это тупые и педантичные создания, программирование по своей сути является утомительным и разочаровывающим занятием.
 
 {{index [programming, "joy of"], speed}}
 
-Fortunately, if you can get over that fact—and maybe even enjoy the rigor of thinking in terms that dumb machines can deal with—programming can be rewarding. It allows you to do things in seconds that would take _forever_ by hand. It is a way to make your computer tool do things that it couldn't do before. On top of that, it makes for a wonderful game of puzzle solving and abstract thinking.
+К счастью, если вы сможете смириться с этим фактом, и, возможно, двам даже понравится строгость мышления в терминах, понятных тупым машинам, — программирование может стать увлекательным и полезным занятием. Оно позволяет вам делать за секунды то, что вручную заняло бы _вечность_. Это способ заставить ваш компьютер выполнять задачи, которые он раньше не мог делать. Более того, программирование превращается в увлекательную игру, где нужно решать головоломки и мыслить абстрактно.
 
-Most programming is done with ((programming language))s. A _programming language_ is an artificially constructed language used to instruct computers. It is interesting that the most effective way we've found to communicate with a computer borrows so heavily from the way we communicate with each other. Like human languages, computer languages allow words and phrases to be combined in new ways, making it possible to express ever new concepts.
+В основном программирование осуществляется с помощью ((языков программирования)). _Язык программирования_ — это искусственно созданный язык, используемый для передачи инструкций компьютеру. Интересно, что самый эффективный способ общения с компьютером, который мы нашли, в значительной степени заимствует из того, как мы общаемся друг с другом. Как и человеческие языки, компьютерные языки позволяют комбинировать слова и фразы новыми способами, что позволяет выражать новые и новые концепции.
 
 {{index [JavaScript, "availability of"], "casual computing"}}
 
-At one point, language-based interfaces, such as the BASIC and DOS prompts of the 1980s and 1990s, were the main method of interacting with computers. For routine computer use, these have largely been replaced with visual interfaces, which are easier to learn but offer less freedom. But if you know where to look, the languages are still there. One of them, _JavaScript_, is built into every modern web ((browser))—and is thus available on almost every device.
+В свое время интерфейсы, основанные на языках, таких как BASIC и командная строка DOS в 1980-х и 1990-х годах, были основным способом взаимодействия с компьютерами. Для повседневного использования компьютеров их в значительной степени заменили визуальные интерфейсы, которые проще освоить, но они предлагают меньше свободы. Однако, если знать, где искать, языки всё ещё остаются с нами. Один из них, _JavaScript_, встроен в каждый современный веб-((браузер)) — и, таким образом, доступен практически на каждом устройстве.
 
 {{indexsee "web browser", browser}}
 
-This book will try to make you familiar enough with this language to do useful and amusing things with it.
+Эта книга постарается достаточно хорошо познакомить вас с этим языком, чтобы вы могли использовать его для выполнения полезных и интересных задач.
 
-## On programming
+## О программировании
 
 {{index [programming, "difficulty of"]}}
 
-Besides explaining JavaScript, I will introduce the basic principles of programming. Programming, it turns out, is hard. The fundamental rules are simple and clear, but programs built on top of these rules tend to become complex enough to introduce their own rules and complexity. You're building your own maze, in a way, and you can easily get lost in it.
+Помимо объяснения JavaScript, я познакомлю вас с основными принципами программирования. Оказывается, программирование — это сложно. Основные правила просты и понятны, но программы, построенные на основе этих правил, часто становятся настолько сложными, что порождают собственные правила и запутанность. В каком-то смысле вы строите свой собственный лабиринт, и в нем легко заблудиться.
 
 {{index learning}}
 
-There will be times when reading this book feels terribly frustrating. If you are new to programming, there will be a lot of new material to digest. Much of this material will then be _combined_ in ways that require you to make additional connections.
+Будут моменты, когда чтение этой книги будет вызывать сильное разочарование. Если вы новичок в программировании, вам предстоит усвоить много нового материала. Затем этот материал будет _комбинироваться_ таким образом, что потребует от вас установления дополнительных связей.
 
-It is up to you to make the necessary effort. When you are struggling to follow the book, do not jump to any conclusions about your own capabilities. You are fine—you just need to keep at it. Take a break, reread some material, and make sure you read and understand the example programs and ((exercises)). Learning is hard work, but everything you learn is yours and will make further learning easier.
+Всё зависит от ваших усилий. Если вам трудно следовать книге, не делайте поспешных выводов о своих способностях. С вами всё в порядке — просто нужно продолжать работать. Сделайте перерыв, перечитайте материал и убедитесь, что вы внимательно изучили и поняли примеры программ и ((упражнения)). Обучение — это тяжелый труд, но всё, что вы усвоите, останется с вами и сделает дальнейшее обучение проще.
 
-{{quote {author: "Ursula K. Le Guin", title: "The Left Hand of Darkness"}
+{{quote {author: "Ursula K. Le Guin", title: "The Левая Рука Тьмы"}
 
 {{index "Le Guin, Ursula K."}}
 
-When action grows unprofitable, gather information; when information grows unprofitable, sleep.
+Когда действия становятся бесполезными, собирай информацию; когда информация становится бесполезной, спи.
 
 quote}}
 
 {{index [program, "nature of"], data}}
 
-A program is many things. It is a piece of text typed by a programmer, it is the directing force that makes the computer do what it does, it is data in the computer's memory, and, at the same time, it controls the actions performed on this memory. Analogies that try to compare programs to familiar objects tend to fall short. A superficially fitting one is to compare a program to a machine—lots of separate parts tend to be involved, and to make the whole thing tick, we have to consider the ways in which these parts interconnect and contribute to the operation of the whole.
+Программа — это многое. Это текст, набранный программистом, это направляющая сила, которая заставляет компьютер выполнять свои задачи, это данные в памяти компьютера, и в то же время она управляет действиями, выполняемыми с этой памятью. Аналогии, которые пытаются сравнить программы с привычными объектами, часто оказываются неточными. Поверхностно подходящим сравнением может быть сравнение программы с механизмом — множество отдельных частей взаимодействуют друг с другом, и чтобы заставить всю систему работать, мы должны учитывать, как эти части соединяются и способствуют функционированию целого.
 
-A ((computer)) is a physical machine that acts as a host for these immaterial machines. Computers themselves can do only stupidly straightforward things. The reason they are so useful is that they do these things at an incredibly high ((speed)). A program can ingeniously combine an enormous number of these simple actions to do very complicated things.
+((Компьютер)) — это физическое устройство, которое выступает в роли носителя этих нематериальных механизмов. Сами по себе компьютеры могут выполнять только предельно простые действия. Причина, по которой они так полезны, заключается в том, что они делают эти действия с невероятной ((скорость))ю. Программа может искусно объединить огромное количество таких простых операций, чтобы выполнять очень сложные задачи.
 
 {{index [programming, "joy of"]}}
 
-A program is a building of thought. It is costless to build, it is weightless, and it grows easily under our typing hands. But as a program grows, so does its ((complexity)). The skill of programming is the skill of building programs that don't confuse the programmer. The best programs are those that manage to do something interesting while still being easy to understand.
+Программа — это сооружение из мыслей. Её создание не требует затрат, она невесома и легко растёт под нашими печатающими руками. Но по мере роста программы растёт и её ((сложность)). Мастерство программирования заключается в умении создавать программы, которые не запутывают самого программиста. Лучшие программы — это те, которые умудряются делать что-то интересное, оставаясь при этом простыми для понимания.
 
 {{index "programming style", "best practices"}}
 
-Some programmers believe that this complexity is best managed by using only a small set of well-understood techniques in their programs. They have composed strict rules ("best practices") prescribing the form programs should have and carefully stay within their safe little zone.
+Некоторые программисты считают, что с этой сложностью лучше всего справляться, используя в своих программах только небольшой набор хорошо изученных техник. Они составили строгие правила ("лучшие практики"), предписывающие, как должны выглядеть программы, и тщательно придерживаются своей безопасной зоны комфорта.
 
 {{index experiment}}
 
-This is not only boring—it is ineffective. New problems often require new solutions. The field of programming is young and still developing rapidly, and it is varied enough to have room for wildly different approaches. There are many terrible mistakes to make in program design, and you should go ahead and make them at least once so that you understand them. A sense of what a good program looks like is developed with practice, not learned from a list of rules.
+Это не только скучно — это ещё и неэффективно. Новые проблемы часто требуют новых решений. Область программирования молода и всё ещё стремительно развивается, и она настолько разнообразна, что в ней есть место для совершенно разных подходов. В проектировании программ можно совершить множество ужасных ошибок, и вам стоит хотя бы раз их совершить, чтобы понять их. Чувство того, как должна выглядеть хорошая программа, развивается с практикой, а не заучиванием списка правил.
 
-## Why language matters
+## Почему язык важен
 
 {{index "programming language", "machine code", "binary data"}}
 
-In the beginning, at the birth of computing, there were no programming languages. Programs looked something like this:
+В начале, на заре компьютерной эры, языков программирования не существовало. Программы выглядели примерно так:
 
 ```{lang: null}
 00110001 00000000 00000000
@@ -88,21 +88,25 @@ In the beginning, at the birth of computing, there were no programming languages
 
 {{index [programming, "history of"], "punch card", complexity}}
 
-This is a program to add the numbers from 1 to 10 together and print the result: `1 + 2 + ... + 10 = 55`. It could run on a simple hypothetical machine. To program early computers, it was necessary to set large arrays of switches in the right position or punch holes in strips of cardboard and feed them to the computer. You can imagine how tedious and error prone this procedure was. Even writing simple programs required much cleverness and discipline. Complex ones were nearly inconceivable.
+Это программа, которая складывает числа от 1 до 10 и выводит результат: `1 + 2 + ... + 10 = 55`. Она могла бы работать на простой гипотетической машине. Чтобы программировать ранние компьютеры, нужно было устанавливать большие массивы переключателей в правильное положение или пробивать отверстия в картонных лентах и загружать их в компьютер. Можно представить, насколько утомительной и подверженной ошибкам была эта процедура. Даже написание простых программ требовало большой изобретательности и дисциплины. Сложные программы были практически немыслимы.
 
 {{index bit, "wizard (mighty)"}}
 
-Of course, manually entering these arcane patterns of bits (the ones and zeros) did give the programmer a profound sense of being a mighty wizard. And that has to be worth something in terms of job satisfaction.
+Конечно, ручной ввод этих загадочных последовательностей битов (единиц и нулей) давал программисту глубокое ощущение того, что он — могущественный волшебник. И это определённо стоит чего-то с точки зрения удовлетворённости работой.
 
 {{index memory, instruction}}
 
-Each line of the previous program contains a single instruction. It could be written in English like this:
+Каждая строка в предыдущей программе содержит одну инструкцию. По-русски ее можно записать так:
 
- 1. Store the number 0 in memory location 0.
- 2. Store the number 1 in memory location 1.
- 3. Store the value of memory location 1 in memory location 2.
- 4. Subtract the number 11 from the value in memory location 2.
- 5. If the value in memory location 2 is the number 0, continue with instruction 9.
+ 1. Сохранить число 0 в ячейке памяти 0.
+ 2. Сохранить число 1 в ячейке памяти 1.
+ 3. Сохранить значение из ячейки памяти 1 в ячейке памяти 2.
+ 4. Вычесть число 11 из значения в ячейке памяти 2.
+ 5. Если значение в ячейке памяти 2 равно числу 0, перейти к инструкции 9.
+ 6. Добавить значение из ячейки памяти 1 к значению в ячейке памяти 0.
+ 7. Добавить число 1 к значению в ячейке памяти 1.
+ 8. Перейти к инструкции 3.
+ 9. Вывести значение из ячейки памяти 0. in memory location 2 is the number 0, continue with instruction 9.
  6. Add the value of memory location 1 to memory location 0.
  7. Add the number 1 to the value of memory location 1.
  8. Continue with instruction 3.
@@ -110,27 +114,27 @@ Each line of the previous program contains a single instruction. It could be wri
 
 {{index readability, naming, binding}}
 
-Although that is already more readable than the soup of bits, it is still rather obscure. Using names instead of numbers for the instructions and memory locations helps.
+Хотя это уже более читаемо, чем набор битов, всё ещё остаётся некоторая запутанность. Использование имён вместо чисел для инструкций и ячеек памяти помогает сделать код понятнее.
 
 ```{lang: "null"}
-  Set “total” to 0.
-  Set “count” to 1.
+  Установить “total” в 0.
+  Установить “count” в 1.
 [loop]
-  Set “compare” to “count”.
-  Subtract 11 from “compare”.
-  If “compare” is 0, continue at [end].
-  Add “count” to “total”.
-  Add 1 to “count”.
-  Continue at [loop].
+  Установить “compare” в “count”.
+  Вычесть 11 из “compare”.
+  Если “compare” равно 0, перейти к [end].
+  Добавить “count” к “total”.
+  Добавить 1 к “count”.
+  Перейти к [loop].
 [end]
-  Output “total”.
+  Вывести “total”.
 ```
 
 {{index loop, jump, "summing example"}}
 
-Can you see how the program works at this point? The first two lines give two memory locations their starting values: `total` will be used to build up the result of the computation, and `count` will keep track of the number that we are currently looking at. The lines using `compare` are probably the most confusing ones. The program wants to see whether `count` is equal to 11 to decide whether it can stop running. Because our hypothetical machine is rather primitive, it can test only whether a number is zero and make a decision based on that. It therefore uses the memory location labeled `compare` to compute the value of `count - 11` and makes a decision based on that value. The next two lines add the value of `count` to the result and increment `count` by 1 every time the program decides that `count` is not 11 yet.
+Теперь видно, как работает программа? Первые две строки задают начальные значения для двух ячеек памяти: `total` будет использоваться для накопления результата вычислений, а `count` будет отслеживать текущее число, с которым мы работаем. Строки с использованием `compare`, вероятно, выглядят наиболее запутанно. Программа хочет проверить, равно ли `count` числу 11, чтобы решить, можно ли остановить выполнение. Поскольку наша гипотетическая машина довольно примитивна, она может проверять только, равно ли число нулю, и принимать решение на основе этого. Поэтому она использует ячейку памяти с меткой `compare`, чтобы вычислить значение `count - 11`, и принимает решение на основе этого значения. Следующие две строки добавляют значение `count` к результату и увеличивают `count` на 1 каждый раз, когда программа решает, что `count` ещё не равно 11.
 
-Here is the same program in JavaScript:
+Вот та же программа на JavaScript:
 
 ```
 let total = 0, count = 1;
@@ -144,15 +148,15 @@ console.log(total);
 
 {{index "while loop", loop, [braces, block]}}
 
-This version gives us a few more improvements. Most importantly, there is no need to specify the way we want the program to jump back and forth anymore—the `while` construct takes care of that. It continues executing the block (wrapped in braces) below it as long as the condition it was given holds. That condition is `count <= 10`, which means “the count is less than or equal to 10”. We no longer have to create a temporary value and compare that to zero, which was just an uninteresting detail. Part of the power of programming languages is that they can take care of uninteresting details for us.
+Эта версия предлагает нам ещё несколько улучшений. Самое главное — теперь не нужно указывать, как программа должна перепрыгивать между инструкциями — конструкция `while` берёт это на себя. Она продолжает выполнять блок (заключённый в фигурные скобки) под ней до тех пор, пока выполняется заданное условие. В данном случае условие — это `count <= 10`, что означает «`count` меньше или равен 10». Нам больше не нужно создавать временное значение и сравнивать его с нулём, что было просто неинтересной деталью. Часть силы языков программирования заключается в том, что они могут заботиться о таких неинтересных деталях за нас.
 
 {{index "console.log"}}
 
-At the end of the program, after the `while` construct has finished, the `console.log` operation is used to write out the result.
+В конце программы, после завершения работы конструкции `while`, операция `console.log` используется для вывода результата.
 
 {{index "sum function", "range function", abstraction, function}}
 
-Finally, here is what the program could look like if we happened to have the convenient operations `range` and `sum` available, which respectively create a ((collection)) of numbers within a range and compute the sum of a collection of numbers:
+Наконец, вот как могла бы выглядеть программа, если бы у нас были удобные операции `range` и `sum`, которые соответственно создают ((коллекцию)) чисел в заданном диапазоне и вычисляют сумму коллекции чисел:
 
 ```{startCode: true}
 console.log(sum(range(1, 10)));
@@ -161,13 +165,13 @@ console.log(sum(range(1, 10)));
 
 {{index readability}}
 
-The moral of this story is that the same program can be expressed in both long and short, unreadable and readable ways. The first version of the program was extremely obscure, whereas this last one is almost English: `log` the `sum` of the `range` of numbers from 1 to 10. (We will see in [later chapters](data) how to define operations like `sum` and `range`.)
+Мораль этой истории в том, что одну и ту же программу можно выразить как длинным и нечитаемым, так и коротким и понятным способом. Первая версия программы была крайне запутанной, тогда как последняя похожа на понятный язык: `вывести` (`log`) `сумму` (`sum`) `диапазона` (`range`) чисел от 1 до 10. (В [последующих главах](data) мы увидим, как определять такие операции, как `sum` и `range`.)
 
 {{index ["programming language", "power of"], composability}}
 
-A good programming language helps the programmer by allowing them to talk about the actions that the computer has to perform on a higher level. It helps omit details, provides convenient building blocks (such as `while` and `console.log`), allows you to define your own building blocks (such as `sum` and `range`), and makes those blocks easy to compose.
+Хороший язык программирования помогает программисту, позволяя говорить о действиях, которые компьютер должен выполнять, на более высоком уровне. Он помогает опускать детали, предоставляет удобные строительные блоки (такие как `while` и `console.log`), позволяет вам определять свои собственные блоки (например, `sum` и `range`) и делает эти блоки лёгкими для комбинирования.
 
-## What is JavaScript?
+## Что такое JavaScript?
 
 {{index history, Netscape, browser, "web application", JavaScript, [JavaScript, "history of"], "World Wide Web"}}
 
@@ -175,47 +179,47 @@ A good programming language helps the programmer by allowing them to talk about 
 
 {{indexsee Web, "World Wide Web"}}
 
-JavaScript was introduced in 1995 as a way to add programs to web pages in the Netscape Navigator browser. The language has since been adopted by all other major graphical web browsers. It has made modern web applications possible—that is, applications with which you can interact directly without doing a page reload for every action. JavaScript is also used in more traditional websites to provide various forms of interactivity and cleverness.
+JavaScript был представлен в 1995 году как способ добавления программ на веб-страницы в браузере Netscape Navigator. С тех пор язык был принят другими основными графическими веб-браузерами. Он сделал возможным создание современных веб-приложений — то есть приложений, с которыми можно взаимодействовать напрямую, без перезагрузки страницы при каждом действии. JavaScript также используется на более традиционных веб-сайтах для обеспечения различных форм интерактивности и улучшения функциональности.
 
 {{index Java, naming}}
 
-It is important to note that JavaScript has almost nothing to do with the programming language named Java. The similar name was inspired by marketing considerations rather than good judgment. When JavaScript was being introduced, the Java language was being heavily marketed and was gaining popularity. Someone thought it was a good idea to try to ride along on this success. Now we are stuck with the name.
+Важно отметить, что JavaScript практически не имеет ничего общего с языком программирования Java. Схожее название было вдохновлено маркетинговыми соображениями, а не здравым смыслом. Когда JavaScript только появлялся, язык Java активно продвигался и набирал популярность. Кто-то решил, что это хорошая идея — попытаться воспользоваться этим успехом. Теперь мы застряли с этим названием.
 
 {{index ECMAScript, compatibility}}
 
-After its adoption outside of Netscape, a ((standard)) document was written to describe the way the JavaScript language should work so that the various pieces of software that claimed to support JavaScript could make sure they actually provided the same language. This is called the ECMAScript standard, after the Ecma International organization that conducted the standardization. In practice, the terms ECMAScript and JavaScript can be used interchangeably—they are two names for the same language.
+После того как JavaScript вышел за пределы Netscape, был написан ((стандарт))ный документ, описывающий, как должен работать язык JavaScript, чтобы различные программы, заявляющие о поддержке JavaScript, могли гарантировать, что они действительно предоставляют один и тот же язык. Этот документ называется стандартом ECMAScript, по названию организации Ecma International, которая занималась стандартизацией. На практике термины ECMAScript и JavaScript могут использоваться взаимозаменяемо — это два названия одного и того же языка.
 
 {{index [JavaScript, "weaknesses of"], debugging}}
 
-There are those who will say _terrible_ things about JavaScript. Many of these things are true. When I was required to write something in JavaScript for the first time, I quickly came to despise it. It would accept almost anything I typed but interpret it in a way that was completely different from what I meant. This had a lot to do with the fact that I did not have a clue what I was doing, of course, but there is a real issue here: JavaScript is ridiculously liberal in what it allows. The idea behind this design was that it would make programming in JavaScript easier for beginners. In actuality, it mostly makes finding problems in your programs harder because the system will not point them out to you.
+Есть те, кто будет говорить _ужасные_ вещи о JavaScript. Многое из этого правда. Когда мне впервые потребовалось написать что-то на JavaScript, я быстро начал его ненавидеть. Он принимал почти всё, что я вводил, но интерпретировал это совершенно иначе, чем я имел в виду. Конечно, это во многом было связано с тем, что я понятия не имел, что делаю, но здесь есть реальная проблема: JavaScript невероятно либерален в том, что он позволяет. Идея, стоящая за таким дизайном, заключалась в том, что это сделает программирование на JavaScript проще для новичков. На самом деле, это в основном затрудняет поиск проблем в ваших программах, потому что система не будет указывать на них.
 
 {{index [JavaScript, "flexibility of"], flexibility}}
 
-This flexibility also has its advantages, though. It leaves room for techniques that are impossible in more rigid languages and makes for a pleasant, informal style of programming. After ((learning)) the language properly and working with it for a while, I have come to actually _like_ JavaScript.
+Однако эта гибкость имеет и свои преимущества. Она оставляет место для техник, которые невозможны в более строгих языках, и способствует приятному, неформальному стилю программирования. После ((изучения)) языка должным образом и работы с ним в течение некоторого времени, я пришел к тому, что мне действительно _нравится_ JavaScript.
 
 {{index future, [JavaScript, "versions of"], ECMAScript, "ECMAScript 6"}}
 
-There have been several versions of JavaScript. ECMAScript version 3 was the widely supported version during JavaScript's ascent to dominance, roughly between 2000 and 2010. During this time, work was underway on an ambitious version 4, which planned a number of radical improvements and extensions to the language. Changing a living, widely used language in such a radical way turned out to be politically difficult, and work on version 4 was abandoned in 2008. A much less ambitious version 5, which made only some uncontroversial improvements, came out in 2009. In 2015, version 6 came out, a major update that included some of the ideas planned for version 4. Since then we've had new, small updates every year.
+Существовало несколько версий JavaScript. ECMAScript версии 3 был широко поддерживаемым во время восхождения JavaScript к доминированию, примерно с 2000 по 2010 год. В это время велась работа над амбициозной версией 4, в которой планировалось внести ряд радикальных улучшений и расширений языка. Оказалось, что изменение живого, широко используемого языка таким радикальным образом является политически сложным, и работа над версией 4 была прекращена в 2008 году. Гораздо менее амбициозная версия 5, которая внесла только некоторые неоспоримые улучшения, вышла в 2009 году. В 2015 году вышла версия 6, крупное обновление, включающее некоторые идеи, запланированные для версии 4. С тех пор мы получаем небольшие обновления каждый год.
 
-The fact that JavaScript is evolving means that browsers have to constantly keep up. If you're using an older browser, it may not support every feature. The language designers are careful to not make any changes that could break existing programs, so new browsers can still run old programs. In this book, I'm using the 2024 version of JavaScript.
+Тот факт, что JavaScript развивается, означает, что браузеры должны постоянно успевать за ним. Если вы используете старый браузер, он может не поддерживать все функции. Разработчики языка стараются не вносить никаких изменений, которые могли бы нарушить работу существующих программ, поэтому новые браузеры по-прежнему могут запускать старые программы. В этой книге я использую версию JavaScript 2024 года.
 
 {{index [JavaScript, "uses of"]}}
 
-Web browsers are not the only platforms on which JavaScript is used. Some databases, such as MongoDB and CouchDB, use JavaScript as their scripting and query language. Several platforms for desktop and server programming, most notably the ((Node.js)) project (the subject of [Chapter ?](node)), provide an environment for programming JavaScript outside of the browser.
+Веб-браузеры - не единственные платформы, на которых используется JavaScript. Некоторые базы данных, такие как MongoDB и CouchDB, используют JavaScript в качестве языка сценариев и запросов. Несколько платформ для настольного и серверного программирования, в первую очередь проект ((Node.js)) (тема [Главы ?](node)), предоставляют среду для программирования на JavaScript вне браузера.
 
-## Code, and what to do with it
+## Код и что с ним делать
 
 {{index "reading code", "writing code"}}
 
-_Code_ is the text that makes up programs. Most chapters in this book contain quite a lot of code. I believe reading code and writing ((code)) are indispensable parts of ((learning)) to program. Try to not just glance over the examples—read them attentively and understand them. This may be slow and confusing at first, but I promise that you'll quickly get the hang of it. The same goes for the ((exercises)). Don't assume you understand them until you've actually written a working solution.
+_Код_ — это текст, из которого состоят программы. Большинство глав в этой книге содержат довольно много кода. Я считаю, что чтение и написание ((кода)) — это неотъемлемая часть ((обучения)) программированию. Постарайтесь не просто бегло просматривать примеры — читайте их внимательно и старайтесь понять. Сначала это может быть медленно и запутанно, но я обещаю, что вы быстро освоитесь. То же самое касается ((упражнений)). Не считайте, что вы их поняли, пока не написали работающее решение.
 
 {{index interpretation}}
 
-I recommend you try your solutions to exercises in an actual JavaScript interpreter. That way, you'll get immediate feedback on whether what you are doing is working, and, I hope, you'll be tempted to ((experiment)) and go beyond the exercises.
+Я рекомендую вам пробовать свои решения в реальном интерпретаторе JavaScript. Таким образом, вы получите мгновенную обратную связь о том, работает ли то, что вы делаете, и, надеюсь, у вас появится желание ((экспериментировать)) и выходить за рамки упражнений.
 
 {{if interactive
 
-When reading this book in your browser, you can edit (and run) all example programs by clicking them.
+При чтении этой книги в браузере вы можете редактировать (и запускать) все примеры программ, щелкая по ним мышью.
 
 if}}
 
@@ -223,37 +227,37 @@ if}}
 
 {{index download, sandbox, "running code"}}
 
-The easiest way to run the example code in the book—and to experiment with it—is to look it up in the online version of the book at [_https://eloquentjavascript.net_](https://eloquentjavascript.net/). There, you can click any code example to edit and run it and to see the output it produces. To work on the exercises, go to [_https://eloquentjavascript.net/code_](https://eloquentjavascript.net/code), which provides starting code for each coding exercise and allows you to look at the solutions.
+Самый простой способ запустить примеры кода из книги и поэкспериментировать с ними — это найти их в онлайн-версии книги на сайте [_https://eloquentjavascript.net_](https://eloquentjavascript.net/). Там вы можете щёлкнуть по любому примеру кода, чтобы отредактировать и запустить его, а также увидеть результат его выполнения. Чтобы работать над упражнениями, перейдите на страницу [_https://eloquentjavascript.net/code_](https://eloquentjavascript.net/code), где предоставлен начальный код для каждого упражнения и можно посмотреть решения.
 
 if}}
 
 {{index "developer tools", "JavaScript console"}}
 
-Running the programs defined in this book outside of the book's website requires some care. Many examples stand on their own and should work in any JavaScript environment. But code in later chapters is often written for a specific environment (the browser or Node.js) and can run only there. In addition, many chapters define bigger programs, and the pieces of code that appear in them depend on each other or on external files. The [sandbox](https://eloquentjavascript.net/code) on the website provides links to ZIP files containing all the scripts and data files necessary to run the code for a given chapter.
+Запуск программ, описанных в этой книге, вне сайта книги требует некоторой осторожности. Многие примеры самодостаточны и должны работать в любой среде JavaScript. Но код в последующих главах часто написан для конкретной среды (браузера или Node.js) и может работать только там. Кроме того, многие главы определяют более крупные программы, и фрагменты кода, которые в них появляются, зависят друг от друга или от внешних файлов. [Песочница](https://eloquentjavascript.net/code) на сайте предоставляет ссылки на ZIP-файлы, содержащие все скрипты и файлы данных, необходимые для запуска кода для определённой главы.
 
-## Overview of this book
+## Обзор книги
 
-This book contains roughly three parts. The first 12 chapters discuss the JavaScript language. The next seven chapters are about web ((browsers)) and the way JavaScript is used to program them. Finally, two chapters are devoted to ((Node.js)), another environment to program JavaScript in. There are five _project chapters_ in the book that describe larger example programs to give you a taste of actual programming.
+Эта книга состоит условно из трех частей. Первые 12 глав посвящены языку JavaScript. Следующие семь глав рассказывают о веб-браузерах и о том, как JavaScript используется для их программирования. Наконец, две главы посвящены ((Node.js)), ещё одной среде для программирования на JavaScript. В книге есть пять _проектных глав_, которые описывают более крупные примеры программ, чтобы дать вам представление о реальном программировании.
 
-The language part of the book starts with four chapters that introduce the basic structure of the JavaScript language. They discuss [control structures](program_structure) (such as the `while` word you saw in this introduction), [functions](functions) (writing your own building blocks), and [data structures](data). After these, you will be able to write basic programs. Next, Chapters [?](higher_order) and [?](object) introduce techniques to use functions and objects to write more _abstract_ code and keep complexity under control.
+Часть книги, посвящённая языку, начинается с четырёх глав, которые знакомят с базовой структурой языка JavaScript. В них обсуждаются [структуры управления](program_structure) (такие как слово `while`, которое вы видели в этом введении), [функции](functions) (создание собственных строительных блоков) и [структуры данных](data). После этого вы сможете писать базовые программы. Затем главы [?](higher_order) и [?](object) представляют техники использования функций и объектов для написания более _абстрактного_ кода и контроля сложности.
 
-After a [first project chapter](robot) that builds a crude delivery robot, the language part of the book continues with chapters on [error handling and bug fixing](error), [regular expressions](regexp) (an important tool for working with text), [modularity](modules) (another defense against complexity), and [asynchronous programming](async) (dealing with events that take time). The [second project chapter](language), where we implement a programming language, concludes the first part of the book.
+После [первой проектной главы](robot), в которой строится примитивный робот-доставщик, часть книги, посвящённая языку, продолжается главами о [обработке ошибок и отладке](error), [регулярных выражениях](regexp) (важном инструменте для работы с текстом), [модульности](modules) (ещё одном способе борьбы со сложностью) и [асинхронном программировании](async) (работе с событиями, которые занимают время). [Вторая проектная глава](language), в которой мы реализуем язык программирования, завершает первую часть книги.
 
-The second part of the book, Chapters [?](browser) to [?](paint), describes the tools that browser JavaScript has access to. You'll learn to display things on the screen (Chapters [?](dom) and [?](canvas)), respond to user input ([Chapter ?](event)), and communicate over the network ([Chapter ?](http)). There are again two project chapters in this part: building a [platform game](game) and a [pixel paint program](paint).
+Вторая часть книги, с главы [?](browser) по [?](paint), описывает инструменты, доступные JavaScript в браузере. Вы узнаете, как отображать элементы на экране (главы [?](dom) и [?](canvas)), реагировать на действия пользователя ([глава ?](event)) и обмениваться данными по сети ([глава ?](http)). В этой части также есть две проектные главы: создание [платформенной игры](game) и [программы для рисования пикселей](paint).
 
-[Chapter ?](node) describes Node.js, and [Chapter ?](skillsharing) builds a small website using that tool.
+[Глава ?](node) описывает Node.js, а [глава ?](skillsharing) создаёт небольшой веб-сайт с использованием этого инструмента.
 
 {{if commercial
 
-Finally, [Chapter ?](fast) describes some of the considerations that come up when optimizing JavaScript programs for speed.
+Наконец, [глава ?](fast) описывает некоторые аспекты, которые возникают при оптимизации программ на JavaScript для повышения скорости.
 
 if}}
 
-## Typographic conventions
+## Типографические соглашения
 
 {{index "factorial function"}}
 
-In this book, text written in a `monospaced` font will represent elements of programs. Sometimes these are self-sufficient fragments, and sometimes they just refer to part of a nearby program. Programs (of which you have already seen a few) are written as follows:
+В этой книге текст, написанный `моноширинным` шрифтом, будет представлять элементы программ. Иногда это самостоятельные фрагменты, а иногда они просто ссылаются на часть ближайшей программы. Программы (несколько из которых вы уже видели) записываются следующим образом:
 
 ```
 function factorial(n) {
@@ -267,11 +271,11 @@ function factorial(n) {
 
 {{index "console.log"}}
 
-Sometimes, to show the output that a program produces, the expected output is written after it, with two slashes and an arrow in front.
+Иногда, чтобы показать результат, который производит программа, после неё записывается ожидаемый вывод, а перед ним две косые черты и стрелка.
 
 ```
 console.log(factorial(8));
 // → 40320
 ```
 
-Good luck!
+Удачи!
