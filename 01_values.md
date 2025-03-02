@@ -1,10 +1,10 @@
 {{meta {docid: values}}}
 
-# Values, Types, and Operators
+# Значения, типы и операторы
 
 {{quote {author: "Master Yuan-Ma", title: "The Book of Programming", chapter: true}
 
-Below the surface of the machine, the program moves. Without effort, it expands and contracts. In great harmony, electrons scatter and regroup. The forms on the monitor are but ripples on the water. The essence stays invisibly below.
+Под поверхностью машины программа движется. Без усилий она расширяется и сжимается. В великой гармонии электроны рассеиваются и перегруппировываются. Формы на мониторе - лишь рябь на воде. Сущность незримо пребывает внизу.
 
 quote}}
 
@@ -14,42 +14,42 @@ quote}}
 
 {{index "binary data", data, bit, memory}}
 
-In the computer's world, there is only data. You can read data, modify data, create new data—but that which isn't data cannot be mentioned. All this data is stored as long sequences of bits and is thus fundamentally alike.
+В мире компьютера существуют только данные. Вы можете читать данные, изменять их, создавать новые - но то, что не является данными, не может быть упомянуто. Все эти данные хранятся в виде длинных последовательностей битов и поэтому в основе своей одинаковы.
 
 {{index CD, signal}}
 
-_Bits_ are any kind of two-valued things, usually described as zeros and ones. Inside the computer, they take forms such as a high or low electrical charge, a strong or weak signal, or a shiny or dull spot on the surface of a CD. Any piece of discrete information can be reduced to a sequence of zeros and ones and thus represented in bits.
+_Биты_ - это любые двузначные значения, обычно описываемые как нули и единицы. Внутри компьютера они принимают такие формы, как высокий или низкий электрический заряд, сильный или слабый сигнал, блестящее или тусклое пятно на поверхности компакт-диска. Любая часть дискретной информации может быть сведена к последовательности нулей и единиц и, таким образом, представлена в битах.
 
 {{index "binary number", "decimal number"}}
 
-For example, we can express the number 13 in bits. This works the same way as a decimal number, but instead of 10 different ((digit))s, we have only 2, and the weight of each increases by a factor of 2 from right to left. Here are the bits that make up the number 13, with the weights of the digits shown below them:
+Например, мы можем выразить число 13 в битах. Это работает так же, как и с десятичными числами, но вместо 10 различных ((цифр)) у нас только 2, и вес каждой из них увеличивается в 2 раза справа налево. Вот биты, составляющие число 13, с весами цифр, показанными под ними:
 
 ```{lang: null}
    0   0   0   0   1   1   0   1
  128  64  32  16   8   4   2   1
 ```
 
-That's the binary number 00001101. Its nonzero digits stand for 8, 4, and 1, and add up to 13.
+Это двоичное число 00001101. Его ненулевые цифры означают 8, 4 и 1 и в сумме дают 13.
 
-## Values
+## Значения
 
 {{index [memory, organization], "volatile data storage", "hard drive"}}
 
-Imagine a sea of bits—an ocean of them. A typical modern computer has more than 100 billion bits in its volatile data storage (working memory). Nonvolatile storage (the hard disk or equivalent) tends to have yet a few orders of magnitude more.
+Представьте море битов — океан из них. Типичный современный компьютер имеет более 100 миллиардов битов в своём временном хранилище данных (оперативной памяти). Постоянное хранилище (жёсткий диск или его эквивалент) обычно имеет ещё на несколько порядков больше.
 
-To be able to work with such quantities of bits without getting lost, we separate them into chunks that represent pieces of information. In a JavaScript environment, those chunks are called _((value))s_. Though all values are made of bits, they play different roles. Every value has a ((type)) that determines its role. Some values are numbers, some values are pieces of text, some values are functions, and so on.
+Чтобы иметь возможность работать с такими объёмами битов, не теряясь при этом, мы разделяем их на фрагменты, которые представляют собой части информации. В среде JavaScript эти фрагменты называются __(значения)ми__. Хотя все значения состоят из битов, они играют разные роли. Каждое значение имеет ((тип)), который определяет его роль. Некоторые значения - это числа, некоторые - фрагменты текста, некоторые - функции и так далее.
 
 {{index "garbage collection"}}
 
-To create a value, you must merely invoke its name. This is convenient. You don't have to gather building material for your values or pay for them. You just call for one, and _whoosh_, you have it. Of course, values are not really created from thin air. Each one has to be stored somewhere, and if you want to use a gigantic number of them at the same time, you might run out of computer memory. Fortunately, this is a problem only if you need them all simultaneously. As soon as you no longer use a value, it will dissipate, leaving behind its bits to be recycled as building material for the next generation of values.
+Чтобы создать значение, вам достаточно просто вызвать его имя. Это удобно. Вам не нужно собирать строительный материал для ваших значений или платить за них. Вы просто вызываете одно, и __вжуух__ — оно у вас есть. Конечно, значения не создаются из воздуха. Конечно, значения не создаются из воздуха. Каждое из них должно где-то храниться, и если вы хотите использовать огромное количество значений одновременно, у вас может закончиться память компьютера. К счастью, это проблема только в том случае, если вам нужно использовать их все одновременно. Как только вы перестаёте использовать значение, оно исчезает, оставляя свои биты для переработки в строительный материал для следующего поколения значений.
 
-The remainder of this chapter introduces the atomic elements of JavaScript programs, that is, the simple value types and the operators that can act on such values.
+Оставшаяся часть этой главы знакомит с атомарными элементами программ на JavaScript, то есть с простыми типами значений и операторами, которые могут действовать на такие значения.
 
-## Numbers
+## Числа
 
 {{index [syntax, number], number, [number, notation]}}
 
-Values of the _number_ type are, unsurprisingly, numeric values. In a JavaScript program, they are written as follows:
+Значения типа __number__ — это, что неудивительно, числовые значения. В программе на JavaScript они записываются следующим образом:
 
 ```
 13
@@ -57,21 +57,21 @@ Values of the _number_ type are, unsurprisingly, numeric values. In a JavaScript
 
 {{index "binary number"}}
 
-Using that in a program will cause the bit pattern for the number 13 to come into existence inside the computer's memory.
+Использование этого в программе приведёт к тому, что в памяти компьютера появится битовая последовательность для числа 13.
 
 {{index [number, representation], bit}}
 
-JavaScript uses a fixed number of bits, 64 of them, to store a single number value. There are only so many patterns you can make with 64 bits, which limits the number of different numbers that can be represented. With _N_ decimal ((digit))s, you can represent 10^N^ numbers. Similarly, given 64 binary digits, you can represent 2^64^ different numbers, which is about 18 quintillion (an 18 with 18 zeros after it). That's a lot.
+Для хранения одного числового значения JavaScript использует фиксированное количество битов равное 64. Существует ограниченное количество комбинаций, которые можно создать с помощью 64 битов, что ограничивает количество различных чисел, которые могут быть представлены. Имея __N__ десятичных ((цифр)), можно представить 10^N^ чисел. Аналогично, имея 64 двоичных цифры, можно представить 2^64^ различных чисел, что составляет около 18 квинтиллионов (18 с 18 нулями). Это очень много.
 
-Computer memory used to be much smaller, and people tended to use groups of 8 or 16 bits to represent their numbers. It was easy to accidentally _((overflow))_ such small numbers—to end up with a number that did not fit into the given number of bits. Today, even computers that fit in your pocket have plenty of memory, so you are free to use 64-bit chunks, and you need to worry about overflow only when dealing with truly astronomical numbers.
+Раньше память компьютеров была намного меньше, и люди часто использовали группы из 8 или 16 битов для представления чисел. Было легко случайно __переполнить__ такие маленькие числа — т.е. получить число, которое не помещается в заданное количество битов. Сегодня даже компьютеры, которые помещаются в карман, имеют достаточно памяти, поэтому вы можете свободно использовать 64-битные блоки и беспокоиться о переполнении только при работе с действительно астрономическими числами.
 
 {{index sign, "floating-point number", "sign bit"}}
 
-Not all whole numbers less than 18 quintillion fit in a JavaScript number, though. Those bits also store negative numbers, so one bit indicates the sign of the number. A bigger issue is representing nonwhole numbers. To do this, some of the bits are used to store the position of the decimal point. The actual maximum whole number that can be stored is more in the range of 9 quadrillion (15 zeros)—which is still pleasantly huge.
+Однако не все целые числа меньше 18 квинтиллионов помещаются в тип number JavaScript. Эти биты также хранят отрицательные числа, поэтому один бит указывает на знак числа. Ещё более серьезной проблемой является представление нецелых чисел. Для этого некоторые биты используются для хранения положения десятичной точки. Фактическое максимальное целое число, которое может быть записано, находится в диапазоне около 9 квадриллионов (15 нулей) — что всё ещё достаточно много.
 
 {{index [number, notation], "fractional number"}}
 
-Fractional numbers are written using a dot:
+Дробные числа записываются с помощью точки:
 
 ```
 9.81
@@ -79,23 +79,23 @@ Fractional numbers are written using a dot:
 
 {{index exponent, "scientific notation", [number, notation]}}
 
-For very big or very small numbers, you may also use scientific notation by adding an _e_ (for _exponent_), followed by the exponent of the number.
+Для очень больших или очень маленьких чисел вы также можете использовать научную (экспоненциальную) нотацию, добавляя _e_ (_экспонента_), за которым следует показатель степени числа.
 
 ```
 2.998e8
 ```
 
-That's 2.998 × 10^8^ = 299,800,000.
+Это 2.998 × 10^8^ = 299,800,000.
 
 {{index pi, [number, "precision of"], "floating-point number"}}
 
-Calculations with whole numbers (also called _((integer))s_) that are smaller than the aforementioned 9 quadrillion are guaranteed to always be precise. Unfortunately, calculations with fractional numbers are generally not. Just as π (pi) cannot be precisely expressed by a finite number of decimal digits, many numbers lose some precision when only 64 bits are available to store them. This is a shame, but it causes practical problems only in specific situations. The important thing is to be aware of it and treat fractional digital numbers as approximations, not as precise values.
+Вычисления с целыми числами (также называемыми _((integer))s_), которые меньше вышеупомянутых 9 квадриллионов, гарантированно всегда будут точными.  К сожалению, вычисления с дробными числами обычно таковыми не являются. Так же, как π (пи) не может быть точно выражено конечным числом десятичных знаков, так и многие числа теряют точность, когда для их хранения доступно только 64 бита. Это досадно, но вызывает практические проблемы только в определенных ситуациях. Важно осознавать это и относиться к дробным числовым значениям как к приблизительным, а не как к точным.
 
-### Arithmetic
+### Арифметика
 
 {{index [syntax, operator], operator, "binary operator", arithmetic, addition, multiplication}}
 
-The main thing to do with numbers is arithmetic. Arithmetic operations such as addition or multiplication take two number values and produce a new number from them. Here is what they look like in JavaScript:
+Основное, что можно делать с числами, — это арифметические операции. Арифметические операции, такие как сложение или умножение, берут два числовых значения и производят из них новое число. Вот как они выглядят в JavaScript:
 
 ```{meta: "expr"}
 100 + 4 * 11
@@ -103,11 +103,11 @@ The main thing to do with numbers is arithmetic. Arithmetic operations such as a
 
 {{index [operator, application], asterisk, "plus character", "* operator", "+ operator"}}
 
-The `+` and `*` symbols are called _operators_. The first stands for addition and the second stands for multiplication. Putting an operator between two values will apply it to those values and produce a new value.
+Символы `+` и `*` называются _операторами_. Первый обозначает сложение, а второй — умножение. Размещение оператора между двумя значениями применит его к этим значениям и создаст новое.
 
 {{index grouping, parentheses, precedence}}
 
-Does this example mean "Add 4 and 100, and multiply the result by 11", or is the multiplication done before the adding? As you might have guessed, the multiplication happens first. As in mathematics, you can change this by wrapping the addition in parentheses.
+Означает ли этот пример "Сложите 4 и 100, а затем умножьте результат на 11", или умножение выполняется до сложения? Как вы могли догадаться, умножение выполняется первым. Как и в математике, вы можете изменить это, заключив сложение в скобки.
 
 ```{meta: "expr"}
 (100 + 4) * 11
@@ -115,33 +115,33 @@ Does this example mean "Add 4 and 100, and multiply the result by 11", or is the
 
 {{index "hyphen character", "slash character", division, subtraction, minus, "- operator", "/ operator"}}
 
-For subtraction, there is the `-` operator. Division can be done with the `/` operator.
+Для вычитания используется оператор `-`. Деление можно выполнить с помощью оператора `/`.
 
-When operators appear together without parentheses, the order in which they are applied is determined by the _((precedence))_ of the operators. The example shows that multiplication comes before addition. The `/` operator has the same precedence as `*`. Likewise, `+` and `-` have the same precedence. When multiple operators with the same precedence appear next to each other, as in `1 - 2 + 1`, they are applied left to right: `(1 - 2) + 1`.
+Когда операторы встречаются вместе без скобок, порядок их применения определяется _((приоритетом))_ операторов. Пример показывает, что умножение выполняется перед сложением. Оператор `/` имеет тот же приоритет, что и `*`. Аналогично, `+` и `-` имеют одинаковый приоритет. Когда несколько операторов с одинаковым приоритетом оказываются рядом, как в `1 - 2 + 1`, они применяются слева направо: `(1 - 2) + 1`.
 
-Don't worry too much about these precedence rules. When in doubt, just add parentheses.
+Не беспокойтесь слишком сильно об этих правилах приоритета. Если сомневаетесь, просто добавьте скобки.
 
 {{index "modulo operator", division, "remainder operator", "% operator"}}
 
-There is one more arithmetic operator, which you might not immediately recognize. The `%` symbol is used to represent the _remainder_ operation. `X % Y` is the remainder of dividing `X` by `Y`. For example, `314 % 100` produces `14`, and `144 % 12` gives `0`. The remainder operator's precedence is the same as that of multiplication and division. You'll also often see this operator referred to as _modulo_.
+Существует ещё один арифметический оператор, который вы можете не сразу узнать. Символ `%` используется для обозначения операции _остатка от деления_. `X % Y` — это остаток от деления `X` на `Y`. Например, `314 % 100` даёт `14`, а `144 % 12` — `0`. Приоритет оператора остатка такой же, как у умножения и деления. Вы также часто можете видеть, что этот оператор называют _модулем_.
 
-### Special numbers
+### Специальные числа
 
 {{index [number, "special values"], infinity}}
 
-There are three special values in JavaScript that are considered numbers but don't behave like normal numbers. The first two are `Infinity` and `-Infinity`, which represent the positive and negative infinities. `Infinity - 1` is still `Infinity`, and so on. Don't put too much trust in infinity-based computation, though. It isn't mathematically sound, and it will quickly lead to the next special number: `NaN`.
+В JavaScript есть три специальных значения, которые считаются числами, но не ведут себя как обычные числа. Первые два — это `Infinity` и `-Infinity`, которые представляют положительную и отрицательную бесконечности. `Infinity - 1` всё равно будет `Infinity`, и так далее. Однако не стоит слишком доверять вычислениям, основанным на бесконечности. Это математически некорректно и быстро приведёт к следующему специальному числу: `NaN`.
 
 {{index NaN, "not a number", "division by zero"}}
 
-`NaN` stands for "not a number", even though it _is_ a value of the number type. You'll get this result when you, for example, try to calculate `0 / 0` (zero divided by zero), `Infinity - Infinity`, or any number of other numeric operations that don't yield a meaningful result.
+`NaN` означает  "not a number" ("не число"), несмотря на то, что оно _является_ значением числового типа. Такой результат вы получите, например, когда попытаетесь вычислить `0 / 0` (ноль делить на ноль), `Infinity - Infinity` или любые другие числовые операции, которые не дают осмысленного результата.
 
-## Strings
+## Строки
 
 {{indexsee "grave accent", backtick}}
 
 {{index [syntax, string], text, character, [string, notation], "single-quote character", "double-quote character", "quotation mark", backtick}}
 
-The next basic data type is the _((string))_. Strings are used to represent text. They are written by enclosing their content in quotes.
+Следующий базовый тип данных - _((string))_ (строка). Строки используются для представления текста. Они записываются путем заключения их содержимого в кавычки.
 
 ```
 `Down on the sea`
@@ -149,7 +149,7 @@ The next basic data type is the _((string))_. Strings are used to represent text
 'Float on the ocean'
 ```
 
-You can use single quotes, double quotes, or backticks to mark strings, as long as the quotes at the start and the end of the string match.
+Для обозначения строк можно использовать одинарные, двойные или обратные кавычки, при условии, что кавычки в начале и в конце строки совпадают.
 
 {{index "line break", "newline character"}}
 
